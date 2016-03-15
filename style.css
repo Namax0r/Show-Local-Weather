@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "LGothic";
+  src: url(font/LeagueGothic-Regular.otf) format("truetype");
+}
+body {
+  background-color: #1c1e29;
+}
+.container-fluid {
+  background-color: #eeeeef;
+}
+.navbar {
+  border: none;
+}
+.navbar-default {
+  width: 100%;
+  text-align: center;
+  -moz-box-shadow: 0 2px black;
+  -webkit-box-shadow: 0 2px black;
+  box-shadow: 0 2px black;
+}
+#chk-weather {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  float: none;
+  display: inline-block;
+  height: 40px;
+  margin-top: 3px;
+  border-radius: 5px;
+  background-color: #ff7530;
+  -moz-box-shadow: 0 4px #c24f17;
+  -webkit-box-shadow: 0 4px #c24f17;
+  box-shadow: 0 4px #c24f17;
+}
+#chk-weather:hover {
+  background-color: #ff671b;
+}
+#your-loc {
+  margin-top: 100px;
+}
+.gothic {
+  font-family: LGothic;
+  font-size: 50px;
+  color: #dddddd;
+}
+.gothic-sm {
+  font-family: LGothic;
+  font-size: 30px;
+  color: #dddddd;
+}
+.sub-text {
+  color: #CFCFCF;
+}
+.sub-img {
+  margin-top: 15px;
+}
+ul {
+  list-style-type: none;
+}
+.orange-border {
+  border-bottom: 1px solid #ff7530;
+}
+#current-temp {
+  font-size: 60px;
+}
+#feel-temp {
+  font-size: 20px;
+}
+#condition-image {
+  margin-top: -15px;
+}
+.min-max li {
+  display: inline;
+}
+.img-center {
+  display: block;
+  margin: 0 auto;
+}

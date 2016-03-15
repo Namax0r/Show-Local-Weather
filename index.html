@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <title>FCC - Show Local Weather "WIP".</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://github.com/Namax0r" target="_blank">
+            Namax0r
+          </a>
+        </div>
+        <button class="btn" id="chk-weather">Check Weather</button>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id="celsius">&#x2103;</a></li>
+          <li><a href="#">/</a></li>
+          <li><a href="#" id="fahrenheit">&#x2109;</a></li>
+        </ul>
+      </div>
+      <!--container-fluid-->
+    </nav>
+    <h1 class="text-center gothic" id="your-loc">Your Location</h1>
+    <div class="row">
+      <div class="col-md-6" id="left-column">
+        <h2 class="text-center gothic">Right Now</h2>
+        <div class="row">
+          <div class="col-md-6 sub-text">
+            <ul>
+              <li><span id="current-temp"></span>
+                <li>
+                  <li>Feels like <span id="feel-temp"></span></li>
+            </ul>
+          </div>
+          <div class="col-md-6 sub-text">
+            <ul>
+              <li id="current-cond-icon"></li>
+              <li id="current-cond"></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="sub-text">
+          <li>Wind: <span id="current-wind"></span> mph</li>
+          <li>Humidity: <span id="current-humidity"></span> %</li>
+        </ul>
+      </div>
+      <!--left-column-->
+      <div class="col-md-6" id="right-column">
+        <div class="row orange-border">
+          <div class="col-md-2" id="day-one-cond-icon">
+          </div>
+          <div class="col-md-6 sub-text">
+            <h2 class="gothic-sm" id="day-one"></h2>
+            <h4 id="day-one-cond"></h4>
+          </div>
+          <div class="col-md-4 sub-text">
+            <ul class="min-max">
+              <li>Min: <span id="day-one-temp-min"></span></li>
+              <li>Max: <span id="day-one-temp-max"></span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row orange-border">
+          <div class="col-md-2" id="day-two-cond-icon">
+          </div>
+          <div class="col-md-6 sub-text">
+            <h2 class="gothic-sm" id="day-two"></h2>
+            <h4 id="day-two-cond"></h4>
+          </div>
+          <div class="col-md-4 sub-text">
+            <ul class="min-max">
+              <li>Min: <span id="day-two-temp-min"></span></li>
+              <li>Max: <span id="day-two-temp-max"></span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row orange-border">
+          <div class="col-md-2" id="day-three-cond-icon">
+          </div>
+          <div class="col-md-6 sub-text">
+            <h2 class="gothic-sm" id="day-three"></h2>
+            <h4 id="day-three-cond"></h4>
+          </div>
+          <div class="col-md-4 sub-text">
+            <ul class="min-max">
+              <li>Min: <span id="day-three-temp-min"></span></li>
+              <li>Max: <span id="day-three-temp-max"></span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row orange-border">
+          <div class="col-md-2" id="day-four-cond-icon">
+          </div>
+          <div class="col-md-6 sub-text">
+            <h2 class="gothic-sm" id="day-four"></h2>
+            <h4 id="day-four-cond"></h4>
+          </div>
+          <div class="col-md-4 sub-text">
+            <ul class="min-max">
+              <li>Min: <span id="day-four-temp-min"></span></li>
+              <li>Max: <span id="day-four-temp-max"></span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- right column-->
+    </div>
+  </div>
+  <!--container-->
+</body>
+
+</html>
