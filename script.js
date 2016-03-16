@@ -18,6 +18,33 @@ window.onload = function() {
     $("#your-loc").html();
   }
 
+  function convertDate(value) {
+    // Create a new JavaScript Date object based on the timestamp
+    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+    var date = new Date(value * 1000);
+    // Hours part from the timestamp
+    var day = date.getDay();
+    console.log(day);
+    switch (day) {
+      case 0:
+        return "Sunday";
+      case 1:
+        return "Monday";
+      case 2:
+        return "Tuesday";
+      case 3:
+        return "Wednesday";
+      case 4:
+        return "Thursday";
+      case 5:
+        return "Friday";
+      case 6:
+        return "Saturday";
+      default:
+        console.log("error");
+        break;
+    }
+  }
   $(function() {
     function getWeather() {
       var apiKey = '204a0339756b548adbc86bc3e5674412';
@@ -30,37 +57,37 @@ window.onload = function() {
           console.log(summary);
           switch (summary) {
             case "rain":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/rain.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/rain.png' />";
               break;
             case "partly-cloudy-day":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/partly-cloudy-day.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/partly-cloudy-day.png' />";
               break;
             case "clear-day":
-              $('#' + id).prepend('<img class="img-responsive sub-img" class="img-center" src="img/clear-day.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/clear-day.png' />";
               break;
             case "clear-night":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/clear-night.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img//clear-night.png' />";
               break;
             case "cloudy":
-              $('#' + id).prepend('<img class="img-responsive sub-img" class="img-center" src="img/cloudy.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/cloudy.png.png' />";
               break;
             case "fog":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/fog.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/fog.png' />";
               break;
             case "sleet":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/sleet.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/sleet.png' />";
               break;
             case "snow":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/snow.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/snow.png' />";
               break;
             case "wind":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/wind.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/wind.png' />";
               break;
             case "partly-cloudy-day":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/partly-cloudy-day.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/partly-cloudy-day.png' />";
               break;
             case "partly-cloudy-night":
-              $('#' + id).prepend('<img class="img-responsive sub-img" src="img/partly-cloudy-night.png" />');
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='partly-cloudy-night.png' />";
               break;
             default:
               break;
@@ -75,25 +102,25 @@ window.onload = function() {
         $("#current-humidity").html(weather.currently.humidity);
         /* 4-Day forecast temperatureMin */
         // Day One
-        $("#day-one").html(weather.daily.data[2].time);
+        $("#day-one").html(convertDate(weather.daily.data[2].time));
         $("#day-one-cond").html(weather.daily.data[2].summary);
         $("#day-one-temp-min").html(Math.round(weather.daily.data[2].temperatureMin) + '\u2109');
         $("#day-one-temp-max").html(Math.round(weather.daily.data[2].temperatureMax) + '\u2109');
         $('#day-one-cond-icon').html(getIcons(weather.daily.data[2].icon, 'day-one-cond-icon'));
         // Day Two
-        $("#day-two").html(weather.daily.data[3].time);
+        $("#day-two").html(convertDate(weather.daily.data[3].time));
         $("#day-two-cond").html(weather.daily.data[3].summary);
         $("#day-two-temp-min").html(Math.round(weather.daily.data[3].temperatureMin) + '\u2109');
         $("#day-two-temp-max").html(Math.round(weather.daily.data[3].temperatureMax) + '\u2109');
         $('#day-two-cond-icon').html(getIcons(weather.daily.data[3].icon, 'day-two-cond-icon'));
         // Day Three
-        $("#day-three").html(weather.daily.data[4].time);
+        $("#day-three").html(convertDate(weather.daily.data[4].time));
         $("#day-three-cond").html(weather.daily.data[4].summary);
         $("#day-three-temp-min").html(Math.round(weather.daily.data[4].temperatureMin) + '\u2109');
         $("#day-three-temp-max").html(Math.round(weather.daily.data[4].temperatureMax) + '\u2109');
         $('#day-three-cond-icon').html(getIcons(weather.daily.data[4].icon, 'day-three-cond-icon'));
         // Day Four
-        $("#day-four").html(weather.daily.data[5].time);
+        $("#day-four").html(convertDate(weather.daily.data[5].time));
         $("#day-four-cond").html(weather.daily.data[7].summary);
         $("#day-four-temp-min").html(Math.round(weather.daily.data[5].temperatureMin) + '\u2109');
         $("#day-four-temp-max").html(Math.round(weather.daily.data[5].temperatureMax) + '\u2109');
@@ -112,7 +139,7 @@ window.onload = function() {
           $("#day-two-temp-min").html(Math.round(weather.daily.data[3].temperatureMin) + '\u2109');
           $("#day-two-temp-max").html(Math.round(weather.daily.data[3].temperatureMax) + '\u2109');
           $("#day-three-temp-min").html(Math.round(weather.daily.data[4].temperatureMin) + '\u2109');
-          $("#day-three-temp-max").html(Math.round(weather.daily.data[4].temperatureMax)  + '\u2109');
+          $("#day-three-temp-max").html(Math.round(weather.daily.data[4].temperatureMax) + '\u2109');
           $("#day-four-temp-min").html(Math.round(weather.daily.data[5].temperatureMin) + '\u2109');
           $("#day-four-temp-max").html(Math.round(weather.daily.data[5].temperatureMax) + '\u2109');
         }
@@ -131,10 +158,27 @@ window.onload = function() {
         }
         $("#celsius").click(enableCelcius);
         $("#fahrenheit").click(enableFahrenheit);
+        // Get name of location
+        var geocoder;
+        initialize();
+        codeLatLng();
+
+        function initialize() {
+          geocoder = new google.maps.Geocoder();
+        }
+
+        function codeLatLng() {
+          var latlng = new google.maps.LatLng(userLatitude, userLongitude);
+          geocoder.geocode({
+            'latLng': latlng
+          }, function(results, status) {
+            document.getElementById("your-loc").innerHTML = '' + (results[4].formatted_address) + '';
+          });
+        } // codeLatLng
+        //  End of get name of location
       });
     } // getWeather();
     $("#chk-weather").click(getWeather);
-
   });
   getLocation();
 };
