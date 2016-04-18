@@ -87,7 +87,7 @@ window.onload = function() {
               document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/partly-cloudy-day.png' />";
               break;
             case "partly-cloudy-night":
-              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='partly-cloudy-night.png' />";
+              document.getElementById(id).innerHTML = "<img class='img-responsive sub-img' src='img/partly-cloudy-night.png' />";
               break;
             default:
               break;
